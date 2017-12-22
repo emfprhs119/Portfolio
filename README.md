@@ -1,15 +1,19 @@
-ÇÏ¹Î¼ö
+í•˜ë¯¼ìˆ˜
 ================
 email : emfprhs119@gmail.com  
 github : https://github.com/emfprhs119
 
 [Pcd_App](https://github.com/emfprhs119/Pcd_App)
 =================
+Term
 > Dec 4, 2017 ~ Dec 20, 2017
+
+Tool
+> Java, Eclipse, Android Sdk
 
 Description
 ----------------
-¿øÀÇ Áö¸§°ú ³ª´­ Á¡ÀÇ ¼ö¸¦ ÀÔ·ÂÀÌ³ª °¢µµ ÀÔ·Â½Ã ¿ø°ú ÇÔ²² ¿øÀÇ Áß½ÉºÎÅÍ ¼öÆò°ú ¼öÁ÷¿¡ ÆòÇàÇÑ °Å¸®¸¦ °è»êÇÏ¿© º¸¿©ÁÖ´Â ¾îÇÃ¸®ÄÉÀÌ¼Ç.
+ì›ì˜ ì§€ë¦„ê³¼ ë‚˜ëˆŒ ì ì˜ ìˆ˜ë¥¼ ìž…ë ¥ì´ë‚˜ ê°ë„ ìž…ë ¥ì‹œ ì›ê³¼ í•¨ê»˜ ì›ì˜ ì¤‘ì‹¬ë¶€í„° ìˆ˜í‰ê³¼ ìˆ˜ì§ì— í‰í–‰í•œ ê±°ë¦¬ë¥¼ ê³„ì‚°í•˜ì—¬ ë³´ì—¬ì£¼ëŠ” ì–´í”Œë¦¬ì¼€ì´ì…˜.
 
 Sample Code
 ----------------
@@ -32,14 +36,18 @@ public void pcdCalc(double pcd, int num, boolean rotation) {
 Screenshot
 -----------------
 ![pcd_app](https://github.com/emfprhs119/Pcd_App/blob/master/capture.png?raw=true)
-
-[È¨ÆäÀÌÁö](https://github.com/emfprhs119/Homepage)
+- - -
+[í™ˆíŽ˜ì´ì§€](https://github.com/emfprhs119/Homepage)
 ====================
+Term
 > Dec 10, 2017 ~ Dec 15, 2017
+
+Tool
+> Java, STS, JSP, JSON, Spring Framework
 
 Description
 ------------------
-Spring Framework ÀÌÇØ¸¦ À§ÇÑ È¨ÆäÀÌÁö Á¦ÀÛ
+Spring Framework ì´í•´ë¥¼ ìœ„í•œ í™ˆíŽ˜ì´ì§€ ì œìž‘
 
 Sample Code
 ----------------
@@ -73,14 +81,18 @@ public String project(Model model) {
 Screenshot
 -----------------
 ![homepage](https://github.com/emfprhs119/Homepage/blob/master/capture.png?raw=true)
-
-[°ßÀû¼­](https://github.com/emfprhs119/estimate)
+- - -
+[ê²¬ì ì„œ](https://github.com/emfprhs119/estimate)
 ===================
-> May 29, 2017 ~ Aug 4, 2017 //Á¦ÀÛ ±â°£ÀÌ ²¿¿© commit ±â°£À¸·Î ´ëÃ¼
+Term
+> May 29, 2017 ~ Aug 4, 2017 //ì œìž‘ ê¸°ê°„ì´ ê¼¬ì—¬ commit ê¸°ê°„ìœ¼ë¡œ ëŒ€ì²´
+
+Tool
+> Java, Eclipse, Swing Component
 
 Description
 --------------------
-°ßÀû¼­ ÀÛ¼º ÇÁ·Î±×·¥ ÀÚÀçºñ °¡°øºñ ¼ö·® ÀÛ¼º½Ã (ÀÚÀçºñ+°¡°øºñ)À¸·Î ´Ü°¡°¡ °áÁ¤µÇ°í (´Ü°¡*¼ö·®)À¸·Î °ø±Þ°¡¾×ÀÌ °áÁ¤µÇ¾î ÇÕ°è±Ý¾×±îÁö ÇÑ´«¿¡ º¼ ¼ö ÀÖµµ·Ï ¸¸µç ÇÁ·Î±×·¥.ÀÛ¼º,ÀúÀå ¹× ºÒ·¯¿À±â,pdf ÆÄÀÏ·Î ³»º¸³»±â Áö¿ø.
+ê²¬ì ì„œ ìž‘ì„± í”„ë¡œê·¸ëž¨ ìžìž¬ë¹„ ê°€ê³µë¹„ ìˆ˜ëŸ‰ ìž‘ì„±ì‹œ (ìžìž¬ë¹„+ê°€ê³µë¹„)ìœ¼ë¡œ ë‹¨ê°€ê°€ ê²°ì •ë˜ê³  (ë‹¨ê°€*ìˆ˜ëŸ‰)ìœ¼ë¡œ ê³µê¸‰ê°€ì•¡ì´ ê²°ì •ë˜ì–´ í•©ê³„ê¸ˆì•¡ê¹Œì§€ í•œëˆˆì— ë³¼ ìˆ˜ ìžˆë„ë¡ ë§Œë“  í”„ë¡œê·¸ëž¨.ìž‘ì„±,ì €ìž¥ ë° ë¶ˆëŸ¬ì˜¤ê¸°,pdf íŒŒì¼ë¡œ ë‚´ë³´ë‚´ê¸° ì§€ì›.
 
 Sample Code
 -----------------
