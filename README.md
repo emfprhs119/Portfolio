@@ -82,6 +82,57 @@ Screenshot
 -----------------
 ![homepage](https://github.com/emfprhs119/Homepage/blob/master/capture.png?raw=true)
 - - -
+[명세서](https://github.com/emfprhs119/specification)
+====================
+Term
+> Dec 29, 2017 ~ Feb 8, 2018
+
+Tool
+> Java, Eclipse, Swing Component, sqlite3
+
+Description
+------------------
+명세서 작성 프로그램  
+-견적서 작성 프로그램에서 데이터 저장방식을 SQLITE를 사용하여 저장 및 검색을 용이하게 수정 자체 출력 기능 지원
+
+Sample Code
+----------------
+<pre><code>
+@Override
+public void loadList(String search) {
+	clear();
+	StringBuilder sb = new StringBuilder();
+	if (search.equals(""))
+		Main.dataReader.getQuery(this, "Select * from SPEC;");
+	else {
+		sb.append("Select * from SPEC WHERE ");
+		sb.append("ISSUE_DATE LIKE '%");
+		sb.append(search);
+		sb.append("%' OR ");
+		sb.append("DEM_NAME LIKE '%");
+		sb.append(search);
+		sb.append("%' OR ");
+		sb.append("DAY_NUM LIKE '%");
+		sb.append(search);
+		// ITEM SEARCH -st
+		sb.append("%' OR ");
+		sb.append("SPEC_ID IN (");
+		sb.append("SELECT DISTINCT SPEC_ID FROM PRODUCT WHERE ITEM_CODE LIKE '%");
+		sb.append(search);
+		sb.append("%' OR ITEM_NAME LIKE '%");
+		sb.append(search);
+		sb.append("%' OR ITEM_STANDARD LIKE '%");
+		sb.append(search);
+		sb.append("%');");
+		// ITEM SEARCH -ed
+		Main.dataReader.getQuery(this, sb.toString());
+	}
+}
+</code></pre>
+Screenshot
+-----------------
+![specification](https://github.com/emfprhs119/specification/blob/master/capture.PNG?raw=true)
+- - -
 [견적서](https://github.com/emfprhs119/estimate)
 ===================
 Term
@@ -92,7 +143,8 @@ Tool
 
 Description
 --------------------
-견적서 작성 프로그램 자재비 가공비 수량 작성시 (자재비+가공비)으로 단가가 결정되고 (단가*수량)으로 공급가액이 결정되어 합계금액까지 한눈에 볼 수 있도록 만든 프로그램.작성,저장 및 불러오기,pdf 파일로 내보내기 지원.
+견적서 작성 프로그램  
+-자재비 가공비 수량 작성시 (자재비+가공비)으로 단가가 결정되고 (단가*수량)으로 공급가액이 결정되어 합계금액까지 한눈에 볼 수 있도록 만든 프로그램.작성,저장 및 불러오기,pdf 파일로 내보내기 지원.
 
 Sample Code
 -----------------
