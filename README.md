@@ -3,21 +3,103 @@
 email : emfprhs119@gmail.com  
 github : https://github.com/emfprhs119
 
+[DevTools](https://github.com/emfprhs119/DevTools)
+=================
+Term
+> 2021.08 ~ 2021.09
+
+Tool
+> React, Javascript, Vscode
+
+Description
+----------------
+개발 보조도구 모음 앱
+
+Sample Code
+----------------
+```html
+export default function Appbar(props) {
+  const classes = useStyles();
+  return (
+	<Box className={classes.root}>
+       <AppBar disableGutters={true} position="static" className={classes.appbar}>
+        <Toolbar disableGutters={true}  variant="dense">
+       <Typography variant="h5" className={classes.appname}>{props.currAppName}</Typography>
+          {props.configHolders.map((configHolder,index)=>(
+            <Fragment  key={index}>
+          <SelectMenu 
+              holder={configHolder}
+              configs={props.configs} 
+              setConfigs={props.setConfigs} />
+              <AddDivider visible={(props.configHolders.length-1)!==index}/>
+            </Fragment>
+          ))}
+          </Toolbar>
+          </AppBar>
+      </Box>
+  );
+}
+```
+
+Screenshot
+-----------------
+![Screenshot_01.png](https://github.com/emfprhs119/DevTools/blob/master/Screenshot/Screenshot_01.png?raw=true)
+- - -
+
+[DocV2](https://github.com/emfprhs119/DocV2)
+=================
+Term
+> 2021.10 ~ 2021.12
+
+Tool
+> C#, sqlite, Visualstudio
+
+Description
+----------------
+견적서, 거래명세서 작성 프로그램
+
+Sample Code
+----------------
+```csharp
+private void InitConfig()
+{
+    string jsonString = File.ReadAllText(configFileName);
+    int columnCount=0;
+    using (JsonDocument document = JsonDocument.Parse(jsonString))
+    {
+        JsonElement docElement = document.RootElement;
+        formName = docElement.GetProperty("Form").GetString();
+        this.Text = formName;
+        if (docElement.TryGetProperty("Orderer", out JsonElement OrdererElement))
+            InitOrder(OrdererElement);
+        if (docElement.TryGetProperty("Column", out JsonElement columnElements))
+            sheetControl.InitSheetStyle(columnElements);
+        columnCount = columnElements.GetArrayLength();
+    }
+    SQLiteWrapper.PrepareDB(columnCount);
+}
+```
+
+Screenshot
+-----------------
+![Screenshot_01.png](https://github.com/emfprhs119/DocV2/blob/master/Screenshot/Screenshot_01.png?raw=true)
+- - -
+
 [Pcd_App](https://github.com/emfprhs119/Pcd_App)
 =================
 Term
-> Dec 4, 2017 ~ Dec 20, 2017
+> 2017.12 ~ 2017.12
 
 Tool
 > Java, Eclipse, Android Sdk
 
 Description
 ----------------
-원의 지름과 나눌 점의 수를 입력이나 각도 입력시 원과 함께 원의 중심부터 수평과 수직에 평행한 거리를 계산하여 보여주는 어플리케이션.
+원의 지름과 나눌 점의 수를 입력이나 각도 입력시 원과 함께 원의 중심부터 수평과 수직에 평행한 거리를 계산하여 보여주는 안드로이드 어플리케이션
 
 Sample Code
 ----------------
-<pre><code>
+```java
 public void pcdCalc(double pcd, int num, boolean rotation) {
 	centerX = (int) (originX * xRatio);
 	centerY = (int) (originY * yRatio);
@@ -31,104 +113,42 @@ public void pcdCalc(double pcd, int num, boolean rotation) {
 		pointArr[i] = new Point(heightf, widthf);
 	}
 }
-</code></pre>
+```
 
 Screenshot
 -----------------
 ![pcd_app](https://github.com/emfprhs119/Pcd_App/blob/master/capture.png?raw=true)
 - - -
-[홈페이지](https://github.com/emfprhs119/Homepage)
-====================
-Term
-> Dec 10, 2017 ~ Dec 15, 2017
-
-Tool
-> Java, STS, JSP, JSON, Spring Framework
-
-Description
-------------------
-Spring Framework 이해를 위한 홈페이지 제작
-
-Sample Code
-----------------
-<pre><code>
-@RequestMapping(value = "/project", method = RequestMethod.GET)
-public String project(Model model) {
-	List<String> cssList;
-	cssList=new ArrayList<String>();
-	cssList.add("header.css");
-	cssList.add("style.css");
-	cssList.add("body/project.css");
-	cssList.add("body/sidebar.css");
-
-	model.addAttribute("title","project");
-	model.addAttribute("cssList",cssList);
-	model.addAttribute("headerhtml", readHtml("header/header.html"));
-
-	List<Map<String, String>> devList=new ArrayList<Map<String, String>>();
-
-	JSONObject obj = readJSON("json/project.json");
-	JSONArray devs=(JSONArray) obj.get("projects");
-	for(int i=0;i < devs.size();i++) {
-		obj=(JSONObject) devs.get(i);
-		devList.add(getMapFromJsonObject(obj));
-	}
-	model.addAt tribute("projectList", devList);
-	return "project";
-}
-</code></pre>
-
-Screenshot
------------------
-![homepage](https://github.com/emfprhs119/Homepage/blob/master/capture.png?raw=true)
-- - -
 [명세서](https://github.com/emfprhs119/specification)
 ====================
 Term
-> Dec 29, 2017 ~ Feb 8, 2018
+> 2017.12 ~ 2018.02
 
 Tool
-> Java, Eclipse, Swing Component, sqlite3
+> Java, Eclipse, Swing, sqlite
 
 Description
 ------------------
 명세서 작성 프로그램  
--견적서 작성 프로그램에서 데이터 저장방식을 SQLITE를 사용하여 저장 및 검색을 용이하게 수정 자체 출력 기능 지원
 
 Sample Code
 ----------------
-<pre><code>
-@Override
-public void loadList(String search) {
-	clear();
-	StringBuilder sb = new StringBuilder();
-	if (search.equals(""))
-		Main.dataReader.getQuery(this, "Select * from SPEC;");
-	else {
-		sb.append("Select * from SPEC WHERE ");
-		sb.append("ISSUE_DATE LIKE '%");
-		sb.append(search);
-		sb.append("%' OR ");
-		sb.append("DEM_NAME LIKE '%");
-		sb.append(search);
-		sb.append("%' OR ");
-		sb.append("DAY_NUM LIKE '%");
-		sb.append(search);
-		// ITEM SEARCH -st
-		sb.append("%' OR ");
-		sb.append("SPEC_ID IN (");
-		sb.append("SELECT DISTINCT SPEC_ID FROM PRODUCT WHERE ITEM_CODE LIKE '%");
-		sb.append(search);
-		sb.append("%' OR ITEM_NAME LIKE '%");
-		sb.append(search);
-		sb.append("%' OR ITEM_STANDARD LIKE '%");
-		sb.append(search);
-		sb.append("%');");
-		// ITEM SEARCH -ed
-		Main.dataReader.getQuery(this, sb.toString());
+```java
+public boolean saveAll() {
+	Demand demand;
+	Specification specification;
+	demand=demandView.getDemand();
+	if (demand.getName() == null || demand.getName().trim().equals("")){
+		JOptionPane.showMessageDialog(null, "demand not found error.");
+		return false;
 	}
+	demand=demandView.saveCurrData();
+	specification=specificationView.saveCurrData(demandView);
+	productView.saveCurrData(specification.getIdQuery());
+	frameLabel.setSpec(specification);
+	return true;
 }
-</code></pre>
+```
 Screenshot
 -----------------
 ![specification](https://github.com/emfprhs119/specification/blob/master/capture.PNG?raw=true)
@@ -136,19 +156,18 @@ Screenshot
 [견적서](https://github.com/emfprhs119/estimate)
 ===================
 Term
-> May 29, 2017 ~ Aug 4, 2017 //제작 기간이 꼬여 commit 기간으로 대체
+> 2017.05 ~ 2017.08
 
 Tool
-> Java, Eclipse, Swing Component
+> Java, Eclipse, Swing
 
 Description
 --------------------
 견적서 작성 프로그램  
--자재비 가공비 수량 작성시 (자재비+가공비)으로 단가가 결정되고 (단가*수량)으로 공급가액이 결정되어 합계금액까지 한눈에 볼 수 있도록 만든 프로그램.작성,저장 및 불러오기,pdf 파일로 내보내기 지원.
 
 Sample Code
 -----------------
-<pre><code>
+```java
 void leftPage() {
 	if (viewManager.getProductView().getCurrPage() > 1){
 		if (viewManager.getProductView().getCurrPage() == 2)
@@ -158,7 +177,7 @@ void leftPage() {
 	}
 	refresh();
 }
-</code></pre>
+```
 Screenshot
 -----------------
 ![estimate](https://github.com/emfprhs119/estimate/blob/master/capture.png?raw=true)
